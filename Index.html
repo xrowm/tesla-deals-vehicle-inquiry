@@ -1,0 +1,65 @@
+<script>
+  /* Current year */
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  /* Vehicle inquiry buttons */
+  const inquiryButtons =
+    document.querySelectorAll("[data-vehicle]");
+
+  const vehicleSelect =
+    document.getElementById("vehicle");
+
+  inquiryButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const vehicle = button.getAttribute("data-vehicle");
+
+      if (vehicleSelect) {
+        vehicleSelect.value = vehicle;
+      }
+    });
+  });
+
+  /* Mobile navigation */
+  const menuButton =
+    document.querySelector(".menu-button");
+
+  const navLinks =
+    document.querySelector(".nav-links");
+
+  if (menuButton && navLinks) {
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.style.display === "flex";
+
+      navLinks.style.display = isOpen ? "" : "flex";
+
+      if (!isOpen) {
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "76px";
+        navLinks.style.left = "0";
+        navLinks.style.right = "0";
+        navLinks.style.padding = "20px";
+        navLinks.style.background = "#080808";
+        navLinks.style.flexDirection = "column";
+        navLinks.style.alignItems = "flex-start";
+      }
+    });
+  }
+</script>
+
+<!-- Start of Tawk.to Script -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a997858a18d6a34454589fe/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!-- End of Tawk.to Script -->
+
+</body>
+</html>
